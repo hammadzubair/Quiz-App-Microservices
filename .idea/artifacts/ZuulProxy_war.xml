@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ZuulProxy:war">
+    <output-path>$PROJECT_DIR$/ZuulProxy/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>ZuulProxy</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Zull Api Gateway.war">
+      <element id="artifact" artifact-name="ZuulProxy:war exploded" />
+    </root>
+  </artifact>
+</component>

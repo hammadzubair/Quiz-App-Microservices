@@ -2,20 +2,32 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Question" />
+        <module name="EurekaServer" />
+        <module name="QuizApp-Frontend" />
+        <module name="Questions-Microservice" />
+        <module name="Result-Microservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Question" target="17" />
+      <module name="EurekaServer" target="1.8" />
+      <module name="Questions-Microservice" target="1.8" />
+      <module name="QuizApp-Frontend" target="1.8" />
+      <module name="Result-Microservice" target="1.8" />
+      <module name="ZuulProxy" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Question" options="-parameters" />
+      <module name="EurekaServer" options="-parameters" />
+      <module name="Questions-Microservice" options="-parameters" />
+      <module name="QuizApp-Frontend" options="-parameters" />
+      <module name="Result-Microservice" options="-parameters" />
+      <module name="ZuulProxy" options="-parameters" />
     </option>
   </component>
 </project>

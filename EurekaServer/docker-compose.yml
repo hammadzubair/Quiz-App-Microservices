@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  eurekaserver:
+    build: .
+    restart: always
+    ports:
+      - 8761:8761
+
+
