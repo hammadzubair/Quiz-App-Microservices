@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Question/Question.iml" filepath="$PROJECT_DIR$/Question/Question.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EurekaServer/EurekaServer.iml" filepath="$PROJECT_DIR$/EurekaServer/EurekaServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Questions-Microservice/Questions-Microservice.iml" filepath="$PROJECT_DIR$/Questions-Microservice/Questions-Microservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Quiz-App-Microservices.iml" filepath="$PROJECT_DIR$/.idea/Quiz-App-Microservices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/QuizApp-Frontend/QuizApp-Frontend.iml" filepath="$PROJECT_DIR$/QuizApp-Frontend/QuizApp-Frontend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Result-Microservice/Result-Microservice.iml" filepath="$PROJECT_DIR$/Result-Microservice/Result-Microservice.iml" />
     </modules>
   </component>
 </project>
