@@ -9,8 +9,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="EurekaServer" />
         <module name="QuizApp-Frontend" />
-        <module name="Questions-Microservice" />
         <module name="Result-Microservice" />
+        <module name="Questions-Microservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
