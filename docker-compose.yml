@@ -1,0 +1,68 @@
+version: '3.8'
+services:
+  eureka-server:
+    container_name: eureka
+    build:
+      context: ./EurekaServer
+      dockerfile: Dockerfile
+    ports:
+      - "8761:8761"
+  quizapp-frontend:
+    container_name: quizapp-frontend
+    build:
+      context: ./Quizapp-Frontend
+      dockerfile: Dockerfile
+    environment:
+      - eureka.client.service-url.defaultZone=http://eureka-server:8761/eureka
+    depends_on:
+      - eureka-server
+    ports:
+      - "8080:8080"
+  db_result_microservice:
+    image: "mysql:8.0"
+    environment:
+      MYSQL_DATABASE: result_microservice
+      MYSQL_USER: hammad
+      MYSQL_PASSWORD: nE5kMc7JCGNqwDQM
+      MYSQL_ROOT_PASSWORD: nE5kMc7JCGNqwDQM
+    ports:
+      - 3307:3306
+  db_questions_microservice:
+    image: "mysql:8.0"
+    environment:
+      MYSQL_DATABASE: questions_microservice
+      MYSQL_USER: hammad
+      MYSQL_PASSWORD: nE5kMc7JCGNqwDQM
+      MYSQL_ROOT_PASSWORD: nE5kMc7JCGNqwDQM
+    ports:
+      - 3308:3306
+  questions-microservice:
+    container_name: questions-microservice
+    build:
+      context: ./Questions-Microservice
+      dockerfile: Dockerfile
+    environment:
+      - eureka.client.service-url.defaultZone=http://eureka-server:8761/eureka
+      - DB_URL=db_questions_microservice
+      - DB_USER=hammad
+      - DB_PASSWORD=nE5kMc7JCGNqwDQM
+    depends_on:
+      - eureka-server
+      - db_questions_microservice
+    ports:
+      - "8089:8089"
+  result-microservice:
+    container_name: result-microservice
+    build:
+      context: ./Result-Microservice
+      dockerfile: Dockerfile
+    environment:
+      - eureka.client.service-url.defaultZone=http://eureka-server:8761/eureka
+      - DB_URL=db_result_microservice
+      - DB_USER=hammad
+      - DB_PASSWORD=nE5kMc7JCGNqwDQM
+    depends_on:
+      - eureka-server
+      - db_result_microservice
+    ports:
+      - "8088:8088"
